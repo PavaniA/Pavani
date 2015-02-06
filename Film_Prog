@@ -1,0 +1,48 @@
+Films = 
+{
+ "kd" => "3", "d" => "4", "omg" => "4", "idiot"  => "5", "dady"  => "4"}
+
+
+    puts "What do you want to do?"
+	puts " Type 'add' to add a movie."
+	puts " Type 'update' to update a movie."
+	puts " Type 'remove' to remove a movie."
+choice = gets.chomp.downcase
+case choice
+when 'update'
+	puts "What movie do you want to update?"
+ 	title = gets.chomp
+
+if Films[title.to_sym].eql?Films.each do |x,y|	
+    puts "What's the new rating? (Type a number 1 to 5.)"
+    rating = gets.chomp
+    Films[title.to_sym] = rating.to_i
+ 	puts "#{title} has been updated with new rating of #{rating}."
+else
+	puts "film not found"
+end
+
+when 'remove'
+if Films[title.to_sym].eql?Films.each do |x,y|
+    puts "Which film do you want to Remove?"
+  title = gets.chomp
+  Films.delete(title.to_sym)
+   puts "#{title} has been removed."
+else
+ puts "Film Not found" 
+end
+
+when 'add'
+puts "What film you want to add?"
+ 	title = gets.chomp
+if Films[title.to_sym].eql?Films.each do |x,y|
+puts "Film already existed! it's rating is #{rating}"
+else
+ 	puts "What's the rating? (Type a number 1 to 5.)"
+   rating = gets.chomp
+   Films[title.to_sym] = rating.to_i
+   puts "#{title} has been added with a rating of #{rating}."
+end
+else
+    puts "it's an invalid entry"
+end
